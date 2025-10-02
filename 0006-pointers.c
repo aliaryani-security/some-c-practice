@@ -8,7 +8,7 @@ int main() {
 
     strcpy(str_a, "Hello World!\n");
     pointer = str_a;
-    puts(str_a);
+    puts(pointer);
 
     pointer2 = pointer + 2;
     puts(pointer2);

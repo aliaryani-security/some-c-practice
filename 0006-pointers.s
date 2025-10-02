@@ -23,7 +23,7 @@ main:
 	mov	QWORD PTR 6[rax], rsi
 	lea	rax, -32[rbp]
 	mov	QWORD PTR -48[rbp], rax
-	lea	rax, -32[rbp]
+	mov	rax, QWORD PTR -48[rbp]
 	mov	rdi, rax
 	call	puts@PLT
 	mov	rax, QWORD PTR -48[rbp]
