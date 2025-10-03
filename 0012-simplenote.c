@@ -3,6 +3,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 void usage (char *program_name, char *file_name) {
     printf("Usage: %s <data to add to %s>\n",program_name, file_name);
