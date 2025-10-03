@@ -41,5 +41,13 @@ int main (int argc, char *argv[]) {
     if(write(fd, buffer, strlen(buffer)) == -1)
         fatal ("in main() while writing buffer to file");
 
+    // closing file
+    if(close(fd) == -1)
+        fatal("in main() while closing file");
+
+    printf("Note has been saved.\n");
+    free(buffer);
+    free(datafile);
+
     return 0;
 }
