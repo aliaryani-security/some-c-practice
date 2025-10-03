@@ -51,3 +51,13 @@ int main (int argc, char *argv[]) {
 
     return 0;
 }
+
+// a function to show error message and exit
+void fatal (char *message) {
+    char error_msg[100];
+
+    strcpy(error_msg, "[!!] FATAL ERROR ");
+    strncat(error_msg, message, 83);
+    perror(error_msg);
+    exit(-1);
+}
