@@ -11,7 +11,7 @@ void usage (char *program_name, char *file_name) {
 }
 
 void fatal(char *);
-void ec_malloc (unsigned int); // an error-checked malloc() wrapper
+void *ec_malloc (unsigned int); // an error-checked malloc() wrapper
 
 int main (int argc, char *argv[]) {
     int fd; //file descriptor
@@ -60,4 +60,13 @@ void fatal (char *message) {
     strncat(error_msg, message, 83);
     perror(error_msg);
     exit(-1);
+}
+
+// an error checked malloc() wrapper function
+void *ec_malloc(unsigned int size) {
+    void *ptr;
+    ptr = malloc(size);
+    if(ptr == NULL)
+        fatal("in ec_malloc() memory allocation");
+    return ptr;
 }
