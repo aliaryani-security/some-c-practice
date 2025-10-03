@@ -36,5 +36,9 @@ int main (int argc, char *argv[]) {
         fatal("in main() while opening file");
     printf("[DEBUG] file descriptor is %d\n", fd);
 
+    // writing data
+    if(write(fd, buffer, strlen(buffer)) == -1)
+        fatal ("in main() while writing buffer to file");
+
     return 0;
 }
